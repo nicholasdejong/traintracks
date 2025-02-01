@@ -17,5 +17,9 @@ fn main() {
 
     let board: Board<X, Y> = Board::new(grid, col_hints, row_hints);
 
-    _ = solve(&board);
+    println!("Rail Count: {}", board.rail_count());
+
+    if let Some(solution) = solve(board) {
+        println!("{solution}");
+    }
 }
